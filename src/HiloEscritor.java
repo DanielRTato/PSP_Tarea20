@@ -7,8 +7,9 @@ public class HiloEscritor extends Thread{
         this.mensaje = mensaje;
     }
 
+    @Override
     public void run() {
-        buzon.escribit(mensaje);
+        buzon.escribir(mensaje);
     }
 }
 

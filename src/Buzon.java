@@ -2,7 +2,7 @@ public class Buzon {
     String mensaje;
     boolean isEmpty;
 
-    public synchronized void escribit(String mensaje) {
+    public synchronized void escribir(String mensaje) {
         while (isEmpty){
             try {
                 wait();
@@ -13,7 +13,7 @@ public class Buzon {
 
         this.mensaje = mensaje;
         isEmpty = true;
-        System.out.println("Tienes un mensaje: " + mensaje);
+        System.out.println("Escritor: " + mensaje);
         notifyAll();
     }
 
@@ -25,7 +25,7 @@ public class Buzon {
                 throw new RuntimeException(e);
             }
         }
-        System.out.println("Leyendo mensaje: " + mensaje);
+        System.out.println("Lector: " + mensaje);
         isEmpty = true;
         notifyAll();
         return mensaje;
