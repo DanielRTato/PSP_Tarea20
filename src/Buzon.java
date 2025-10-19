@@ -5,8 +5,9 @@ public class Buzon {
     public synchronized void escribir(String mensaje) {
         while (!isEmpty){
             try {
-                wait();
                 System.out.println("Escritor: Estoy esperando");
+                wait();
+
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -20,8 +21,9 @@ public class Buzon {
     public synchronized String leer () {
         while(isEmpty) {
             try {
-                wait();
                 System.out.println("Lector: Estoy esperando");
+                wait();
+
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

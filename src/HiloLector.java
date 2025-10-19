@@ -10,6 +10,6 @@ public class HiloLector extends Thread {
     @Override
     public void run() {
         buzon.leer();
-        buzon.mensaje = "";
+
     }
 }

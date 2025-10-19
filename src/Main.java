@@ -9,11 +9,12 @@ public class Main {
         HiloLector lector1 = new HiloLector(buzon);
         HiloLector lector2 = new HiloLector(buzon);
         HiloLector lector3 = new HiloLector(buzon);
-        HiloEscritor escritorEspera = new HiloEscritor(buzon, "Esperando a escribir el mensaje");
+        HiloEscritor escritorEspera = new HiloEscritor(buzon, "Espera");
 
         escritor.start(); escritorEspera.start(); lector.start(); lector2.start(); escritor1.start(); lector1.start(); lector3.start();
         try {
             escritor.join(); escritor1.join(); lector.join(); lector1.join(); lector2.join();lector3.join(); escritorEspera.join();
+            lector.join(); lector1.join(); lector2.join(); lector3.join();
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
